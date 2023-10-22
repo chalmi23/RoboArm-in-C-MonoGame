@@ -8,18 +8,30 @@ namespace RoboArm
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private BasicEffect basicEffect;
+
+        private Texture2D metal1Texture; // Tekstura metalu1
+        private Texture2D metal2Texture; // Tekstura metalu2
+        private Texture2D metal3Texture; // Tekstura metalu3
+
+        private Matrix world, view, proj;
+
+        private float zoom = 1.0f;
+        private float zoomSpeed = 0.02f;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            this.Window.AllowUserResizing = true;
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            _graphics.PreferredBackBufferWidth = 1200;
+            _graphics.PreferredBackBufferHeight = 1000;
+            _graphics.ApplyChanges();
             base.Initialize();
         }
 
@@ -27,7 +39,10 @@ namespace RoboArm
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            metal1Texture = Content.Load<Texture2D>("metal1");
+            metal2Texture = Content.Load<Texture2D>("metal2");
+            metal3Texture = Content.Load<Texture2D>("metal3");
+
         }
 
         protected override void Update(GameTime gameTime)
