@@ -40,7 +40,7 @@ namespace RoboArm
         private float secondArmRotation = 0.0f;
         private float secondArmUpDown = 0.0f;
 
-        private float thirdArmUpDown = 0.0f;
+        private float thirdArmUpDown = 0.05f;
 
         private float scaleFactor = 0.5f; // Wartość skali dla drugiego graniastosłupa
 
@@ -148,49 +148,49 @@ namespace RoboArm
             vertices3 = new VertexPositionTexture[]
             {
             // Podstawa pierwszej połówki graniastosłupa
-            new VertexPositionTexture(new Vector3(4.0f, -0.0200f, -0.0625f), new Vector2(0, 1)),
-            new VertexPositionTexture(new Vector3(5.0f, -0.0625f, -0.0625f), new Vector2(1, 1)),
-            new VertexPositionTexture(new Vector3(4.0f, -0.0625f, 0.0625f), new Vector2(0, 0)),
-            new VertexPositionTexture(new Vector3(5.0f, -0.0625f, 0.0625f), new Vector2(1, 0)),
+            new VertexPositionTexture(new Vector3(0.0f, -0.0200f, -0.0625f), new Vector2(0, 1)),
+            new VertexPositionTexture(new Vector3(1.0f, -0.0625f, -0.0625f), new Vector2(1, 1)),
+            new VertexPositionTexture(new Vector3(0.0f, -0.0625f, 0.0625f), new Vector2(0, 0)),
+            new VertexPositionTexture(new Vector3(1.0f, -0.0625f, 0.0625f), new Vector2(1, 0)),
 
             // Czworokąt górny pierwszej połówki graniastosłupa
-            new VertexPositionTexture(new Vector3(4.0f, 0.0625f, -0.0625f), new Vector2(0, 1)),
-            new VertexPositionTexture(new Vector3(5.0f, 0.0625f, -0.0625f), new Vector2(1, 1)),
-            new VertexPositionTexture(new Vector3(4.0f, 0.0625f, 0.0625f), new Vector2(0, 0)),
-            new VertexPositionTexture(new Vector3(5.0f, 0.0625f, 0.0625f), new Vector2(1, 0)),
+            new VertexPositionTexture(new Vector3(0.0f, 0.0625f, -0.0625f), new Vector2(0, 1)),
+            new VertexPositionTexture(new Vector3(1.0f, 0.0625f, -0.0625f), new Vector2(1, 1)),
+            new VertexPositionTexture(new Vector3(0.0f, 0.0625f, 0.0625f), new Vector2(0, 0)),
+            new VertexPositionTexture(new Vector3(1.0f, 0.0625f, 0.0625f), new Vector2(1, 0)),
 
             // Boki - Wydłużone ściany pierwszej połówki graniastosłupa
-            new VertexPositionTexture(new Vector3(4.0f, -0.0625f, -0.0625f), new Vector2(0, 1)),
-            new VertexPositionTexture(new Vector3(5.0f, -0.0625f, -0.0625f), new Vector2(1, 1)),
-            new VertexPositionTexture(new Vector3(4.0f, 0.0625f, -0.0625f), new Vector2(0, 0)),
-            new VertexPositionTexture(new Vector3(5.0f, 0.0625f, 0.0625f), new Vector2(1, 0)),
+            new VertexPositionTexture(new Vector3(0.0f, -0.0625f, -0.0625f), new Vector2(0, 1)),
+            new VertexPositionTexture(new Vector3(1.0f, -0.0625f, -0.0625f), new Vector2(1, 1)),
+            new VertexPositionTexture(new Vector3(0.0f, 0.0625f, -0.0625f), new Vector2(0, 0)),
+            new VertexPositionTexture(new Vector3(1.0f, 0.0625f, 0.0625f), new Vector2(1, 0)),
             };
 
             // Wierzchołki drugiej połówki graniastosłupa
             basicEffect4 = new BasicEffect(GraphicsDevice);
             basicEffect4.TextureEnabled = true;
-            basicEffect4.Texture = metal2Texture;
+            basicEffect4.Texture = metal3Texture;
 
             // Wierzchołki drugiej połówki graniastosłupa
             vertices4 = new VertexPositionTexture[]
             {
             // Podstawa pierwszej połówki graniastosłupa
-            new VertexPositionTexture(new Vector3(4.0f, -0.0625f, -0.0625f), new Vector2(0, 1)),
-            new VertexPositionTexture(new Vector3(5.0f, -0.0625f, -0.0625f), new Vector2(1, 1)),
-            new VertexPositionTexture(new Vector3(4.0f, -0.0625f, 0.0625f), new Vector2(0, 0)),
-            new VertexPositionTexture(new Vector3(5.0f, -0.0625f, 0.0625f), new Vector2(1, 0)),
+            new VertexPositionTexture(new Vector3(0.0f, -0.0625f, -0.0625f), new Vector2(0, 1)),
+            new VertexPositionTexture(new Vector3(1.0f, -0.0625f, -0.0625f), new Vector2(1, 1)),
+            new VertexPositionTexture(new Vector3(0.0f, -0.0625f, 0.0625f), new Vector2(0, 0)),
+            new VertexPositionTexture(new Vector3(1.0f, -0.0625f, 0.0625f), new Vector2(1, 0)),
 
             // Czworokąt górny pierwszej połówki graniastosłupa
-            new VertexPositionTexture(new Vector3(4.0f, 0.0625f, -0.0625f), new Vector2(0, 1)),
-            new VertexPositionTexture(new Vector3(5.0f, 0.0625f, -0.0625f), new Vector2(1, 1)),
-            new VertexPositionTexture(new Vector3(4.0f, 0.0625f, 0.0625f), new Vector2(0, 0)),
-            new VertexPositionTexture(new Vector3(5.0f, 0.0625f, 0.0625f), new Vector2(1, 0)),
+            new VertexPositionTexture(new Vector3(0.0f, 0.0625f, -0.0625f), new Vector2(0, 1)),
+            new VertexPositionTexture(new Vector3(1.0f, 0.0625f, -0.0625f), new Vector2(1, 1)),
+            new VertexPositionTexture(new Vector3(0.0f, 0.0625f, 0.0625f), new Vector2(0, 0)),
+            new VertexPositionTexture(new Vector3(1.0f, 0.0625f, 0.0625f), new Vector2(1, 0)),
 
             // Boki - Wydłużone ściany pierwszej połówki graniastosłupa
-            new VertexPositionTexture(new Vector3(4.0f, -0.0625f, -0.0625f), new Vector2(0, 1)),
-            new VertexPositionTexture(new Vector3(5.0f, -0.0625f, -0.0625f), new Vector2(1, 1)),
-            new VertexPositionTexture(new Vector3(4.0f, 0.0625f, -0.0625f), new Vector2(0, 0)),
-            new VertexPositionTexture(new Vector3(5.0f, 0.0625f, 0.0625f), new Vector2(1, 0)),
+            new VertexPositionTexture(new Vector3(0.0f, -0.0625f, -0.0625f), new Vector2(0, 1)),
+            new VertexPositionTexture(new Vector3(1.0f, -0.0625f, -0.0625f), new Vector2(1, 1)),
+            new VertexPositionTexture(new Vector3(0.0f, 0.0625f, -0.0625f), new Vector2(0, 0)),
+            new VertexPositionTexture(new Vector3(1.0f, 0.0625f, 0.0625f), new Vector2(1, 0)),
             };
         }
 
@@ -222,8 +222,8 @@ namespace RoboArm
             if (keyboardState.IsKeyDown(Keys.T) && secondArmUpDown < 1.55) secondArmUpDown += 0.02f;
             if (keyboardState.IsKeyDown(Keys.G) && secondArmUpDown > -1.55) secondArmUpDown -= 0.02f;
 
-            if (keyboardState.IsKeyDown(Keys.Y)) thirdArmUpDown += 0.001f;
-            if (keyboardState.IsKeyDown(Keys.H)) thirdArmUpDown -= 0.001f;
+            if (keyboardState.IsKeyDown(Keys.Y) && thirdArmUpDown < 1.55 ) thirdArmUpDown += 0.02f;
+            if (keyboardState.IsKeyDown(Keys.H) && thirdArmUpDown > 0.05) thirdArmUpDown -= 0.02f;
 
             base.Update(gameTime);
         }
@@ -270,11 +270,8 @@ namespace RoboArm
             view3 = Matrix.CreateRotationX(secondArmRotation) * view3;
             view4 = Matrix.CreateRotationX(secondArmRotation) * view4;
 
-            //Ustaw macierze dla Y i H
-            Matrix translationMatrix = Matrix.CreateTranslation(new Vector3(4.0f, 0.0f, 0.0f)); // Przesunięcie na pozycję drugiego graniastosłupa
-            view3 = Matrix.CreateRotationY(thirdArmUpDown) * view3;
-            view4 = Matrix.CreateRotationY(-thirdArmUpDown) * view4;
 
+            Matrix translationMatrix = Matrix.CreateTranslation(new Vector3(4.0f, 0.0f, 0.0f)); // Przesunięcie na pozycję drugiego graniastosłupa
 
             //Ustaw macierze dla T i G
 
@@ -282,6 +279,9 @@ namespace RoboArm
             view3 = Matrix.CreateRotationZ(secondArmUpDown) * translationMatrix * view3;
             view4 = Matrix.CreateRotationZ(secondArmUpDown) * translationMatrix * view4;
 
+            //Ustaw macierze dla Y i H
+            view3 = Matrix.CreateRotationY(thirdArmUpDown) * translationMatrix * view3;
+            view4 = Matrix.CreateRotationY(-thirdArmUpDown) * translationMatrix * view4;
 
 
             DrawPrism(vertices, indices, basicEffect, view, proj, world);
